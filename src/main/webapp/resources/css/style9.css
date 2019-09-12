@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: auto;
+}
+
+.system {
+    font-size: 40px;
+    text-align: center;
+    background-color: navajowhite;
+    border: 2px solid red;
+    margin-right: 200px;
+    margin-left: 200px;
+    padding-bottom: 5px;
+}
+
+a:link {
+    color: green;
+    font-size: 27px;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: yellow;
+}
+
+.link1 {
+    margin-top: -27px;
+    margin-right: 80px;
+}
+
+.link2 {
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+.modification {
+    font-size: 30px;
+    margin-top: 1000px;
+    margin-left: 200px;
+}
+
+.disciplines {
+    font-size: 30px;
+    margin-top: 1000px;
+    margin-left: 200px;
+}
+
+
+.tutor {
+    width: 975px;
+}
+
+table {
+    width: 600px;
+    margin: 70px 50px 0 200px;
+    border-collapse: collapse;
+
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px;
+    min-width: 150px;
+    max-width: 150px;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.semestr {
+    float: left;
+}
+
+.choose {
+    margin: 10px auto 5px;
+    font-size: 25px;
+}
+
+button {
+    float:left;
+}

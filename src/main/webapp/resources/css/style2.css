@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: auto;
+}
+
+.system {
+    font-size: 40px;
+    text-align: center;
+    background-color: navajowhite;
+    border: 2px solid red;
+    margin-right: 200px;
+    margin-left: 200px;
+    padding-bottom: 5px;
+}
+
+a:link {
+    color: green;
+    font-size: 27px;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: yellow;
+}
+
+.link1 {
+    margin-top: -27px;
+    margin-right: 80px;
+}
+
+.link2 {
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+.modification {
+    font-size: 30px;
+    margin-top: 1000px;
+    margin-left: 200px;
+}
+
+textarea {
+    resize: vertical;
+    width: 100%;
+}
+
+form {
+    width: 400px;
+    border: 5px outset yellowgreen;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+fieldset {
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend {
+    text-align: center;
+    color: green;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 10px;
+}
