@@ -133,19 +133,19 @@
 
 <div>
     <div class="link2">
-        <a href="/students">Студенты</a>
+        <a href="/students" class="students">Студенты</a>
     </div>
 </div>
 
 <div>
     <div class="link3">
-        <a href="/disciplines">Дисциплины</a>
+        <a href="/disciplines" class="disciplines">Дисциплины</a>
     </div>
 </div>
 
 <div>
     <div class="link4">
-        <a href="/semestrs">Семестры</a>
+        <a href="/semestrs" class="semestrs">Семестры</a>
     </div>
 </div>
 

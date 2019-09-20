@@ -6,6 +6,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../resources/css/style3.css">
+    <link rel="stylesheet" href="../../resources/css/lib/jquery-ui-1.12.1/jquery-ui.css">
+    <script src="../../resources/lib/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#date" ).datepicker();
+        } );
+    </script>
 </head>
 <body>
 

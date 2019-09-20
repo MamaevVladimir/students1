@@ -8,6 +8,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../resources/css/style6.css">
+    <script src="../../resources/js/functions.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -20,14 +22,14 @@
 
 <span>
     <div class="link2">
-    <a href="/../main.jsp">На главную</a>
+    <a href="../../index.jsp">На главную</a>
     <a href="#" onclick="history.back();">Назад</a>
     </div>
 </span>
 
 <span><strong class="modification">Список дисциплин</strong></span>
 
-<table class="semestr">
+<table class="disciplines">
     <tr style="background-color: green">
         <td></td>
         <td>Наименование дисциплины</td>
@@ -36,7 +38,7 @@
     <c:forEach items="${disciplines}" var="d">
         <tr>
             <td>
-                <input type="checkbox" name="color" value="green">
+                <input type="checkbox" value="${d.id}">
             </td>
             <td>${d.discipline}</td>
         </tr>
@@ -49,18 +51,23 @@
                 <input type="submit" value="Создать дисциплину">
             </form>
 
+            <input type="submit" onclick="modifingDiscipline()" value="Модифицировать выбранную дисциплину">
+            <form action="/modifydiscipline" id="modifDiscForm">
+                <input type="hidden" name="idModifDisc" id="idModifDisc">
+            </form>
+
+
+            <input type="submit" onclick="deleteDiscipline()" value="Удалить выбранные дисциплины">
+            <form action="/deletediscipline" id="deleteDiscForm">
+                <input type="hidden" name="idsDeleteDisc" id="idsDeleteDisc">
+            </form>
+
         </div>
     </div>
 
-    <div>
-        <input type="hidden">
-        <input type="button" value="Модифицировать выбранную дисциплину">
-    </div>
 
-    <div>
-        <input type="hidden">
-        <input type="button" value="Удалить выбранную дисциплину">
-    </div>
+
+
 
 </table>
 

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f" %>
 <%@ page isELIgnored="false" %>
 
 <!DOCTYPE html>
@@ -20,7 +21,7 @@
 
 
 <div class="link2">
-    <a href="/../main.jsp">На главную</a>
+    <a href="../../index.jsp">На главную</a>
 
     <div class="secondRow">
         <div class="admin-bottom">

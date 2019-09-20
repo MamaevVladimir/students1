@@ -46,42 +46,34 @@ a:active {
 
 .modification {
     font-size: 30px;
-    margin-top: 1000px;
+    margin-top: 800px;
     margin-left: 200px;
     text-align: center;
 }
 
-.tutor {
-    width: 975px;
+textarea {
+    resize: vertical;
+    width: 100%;
 }
 
-table {
-    width: 600px;
-    margin: 70px 50px 0 200px;
-    border-collapse: collapse;
-
+form {
+    width: 400px;
+    border: 5px outset yellowgreen;
+    padding: 20px;
+    margin: 0 auto;
 }
 
-td {
-    border: 1px solid black;
-    padding: 10px;
-    min-width: 150px;
-    max-width: 150px;
-    height: 50px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    vertical-align: middle;
+fieldset {
+    padding: 15px;
+    margin-bottom: 20px;
 }
 
-.disciplines {
-    float: left;
+legend {
+    text-align: center;
+    color: green;
 }
 
-.choose {
-    margin: 10px auto 5px;
-    font-size: 25px;
-}
-
-button {
-    float:right;
+input {
+    width: 100%;
+    margin-bottom: 10px;
 }

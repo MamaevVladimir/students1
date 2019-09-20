@@ -9,13 +9,13 @@ public class Student {
     private String surname;
     private String name;
     private String group;
-    private Date date;
+    private String date;
     private int status = 1;
 
     public Student() {
     }
 
-    public Student(int id, String surname, String name, String group, Date date, int status) {
+    public Student(int id, String surname, String name, String group, String date, int status) {
         this.id = id;
         this.surname = surname;
         this.name = name;
@@ -56,11 +56,11 @@ public class Student {
         this.group = group;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
