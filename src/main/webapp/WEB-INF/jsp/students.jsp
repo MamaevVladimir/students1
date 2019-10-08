@@ -9,41 +9,49 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../resources/css/style1.css">
+    <script src="../../resources/js/functions.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
 <div>
     <div class="system">Система управления студентами и их успеваемостью</div>
     <span class="link1" style="float: right">
-        <a href="exit">Logout</a>
+        <a href="/logout">Logout</a>
     </span>
 </div>
 
-
 <div class="link2">
-    <a href="../../index.jsp">На главную</a>
+    <a href="/">На главную</a>
 
     <div class="secondRow">
         <div class="admin-bottom">
 
-            <form action="#">
-                <input type="button" value="Просмотреть успеваемость выбранных студентов" onclick="location.href='/records'">
+            <form action="/records" id="studentProgressForm">
+                <input type="hidden" id="idStudentProgress" name="idStudentProgress">
             </form>
+            <input onclick="studentProgress()" type="submit" value="Просмотреть успеваемость выбранного студента">
 
-            <form action="/createstudent" method="get">
-                <input type="submit" value="Создать студента">
-            </form>
 
-            <form action="#">
-                <input type="button" value="Модифицировать выбранного студента" onclick="location.href='/modificationstudent'">
-            </form>
+            <c:if test="${role eq 'admin'}">
+                <form action="/createstudent" method="get">
+                    <input type="submit" value="Создать студента">
+                </form>
 
-            <form action="#">
-                <input type="button" value="Удалить выбранных студентов" onclick="location.href='/deletestudent'">
-            </form>
+                <input type="submit" onclick="modifingStudent()" value="Модифицировать выбранного студента">
+                <form action="/modificationstudent" id="modifStudForm">
+                    <input type="hidden" name="idModifStud" id="idModifStud">
+                </form>
+
+                <input type="submit" value="Удалить выбранных студентов" onclick="deleteStudent()">
+                <form action="/deletestudent" id="deleteStudForm">
+                    <input type="hidden" name="idsDeleteStud" id="idsDeleteStud">
+                </form>
+            </c:if>
         </div>
     </div>
 </div>
+
 <table>
     <caption>
         <strong>
@@ -58,10 +66,11 @@
         <td>Дата поступления</td>
     </tr>
 
+
     <c:forEach items="${students}" var="s">
         <tr>
             <td>
-                <input type="checkbox" name="color" value="green">
+                <input type="checkbox" value="${s.id}">
             </td>
             <td>${s.surname}</td>
             <td>${s.name}</td>
@@ -69,7 +78,6 @@
             <td>${s.date}</td>
         </tr>
     </c:forEach>
-
 </table>
 
 

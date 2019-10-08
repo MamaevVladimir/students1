@@ -23,7 +23,7 @@ public class ModificationDisciplineController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String newName = req.getParameter("secondName");
-        String idDisc = req.getParameter("idDisc");
+        String idDisc = req.getParameter("discId");
         DBManager.modifyDiscipline(idDisc, newName);
         resp.sendRedirect("/disciplines");
     }

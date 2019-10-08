@@ -26,8 +26,6 @@ public class CreateStudentController extends HttpServlet {
         String newGroupStudent = req.getParameter("secondGroupStudent");
         String newDateStudent = req.getParameter("secondDateStudent");
         DBManager.createStudent(newSurname, newNameStudent, newGroupStudent, newDateStudent);
-
         resp.sendRedirect("/students");
-
     }
 }

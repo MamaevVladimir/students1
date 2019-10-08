@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f" %>
+<%@ page isELIgnored="false" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,13 +15,13 @@
 <div>
     <div class="system">Система управления студентами и их успеваемостью</div>
     <span class="link1" style="float: right">
-        <a href="exit">Logout</a>
+        <a href="/logout">Logout</a>
     </span>
 </div>
 
 <span>
     <div class="link2">
-    <a href="../../main.jsp">На главную</a>
+    <a href="/">На главную</a>
     <a href="#" onclick="history.back();">Назад</a>
     </div>
 </span>
@@ -33,10 +36,10 @@
         <td>Дата поступления</td>
     </tr>
     <tr>
-        <td>Фёдоров</td>
-        <td>Фёдор</td>
-        <td>КП-1251</td>
-        <td>2018-02-21</td>
+        <td>${student.surname}</td>
+        <td>${student.name}</td>
+        <td>${student.group}</td>
+        <td><f:formatDate value="${student.date}" pattern="dd/MM/yyyy"></f:formatDate></td>
     </tr>
 </table>
 
@@ -45,36 +48,33 @@
         <td>Дисциплина</td>
         <td>Оценка</td>
     </tr>
-    <tr>
-        <td>Информатика</td>
-        <td>5</td>
-    </tr>
-    <tr>
-        <td>Системный Анализ</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>Управление проектами</td>
-        <td>5</td>
-    </tr>
-    <tr>
-        <td>Основы Дискретной Математики</td>
-        <td>4</td>
-    </tr>
-    <div class="choose">Выбрать семестр</div>
 
-    <fieldset>
-        <select>
-            <optgroup>
-                <option value="1">Семестр 1</option>
-                <option value="2">Семестр 2</option>
-                <option value="3">Семестр 3</option>
-                <option value="4">Семестр 4</option>
-            </optgroup>
-        </select>
-    </fieldset>
-    <button>Выбрать</button>
+    <c:forEach items="${marks}" var="mark">
+        <tr>
+            <td>${mark.discipline.discipline}</td>
+            <td>${mark.mark}</td>
+        </tr>
+    </c:forEach>
 </table>
+
+<div class="choose">Выбрать семестр</div>
+
+<form action="/termStudentProgress" method="get" id="choiceSemStudProgressForm">
+    <select name="selectedTermStudentProgressId" id="multipleStudentProgressSelect">
+        <c:forEach items="${semestrs}" var="sem">
+            <c:choose>
+                <c:when test="${sem.id eq selectedStudentProgressTerm.id}">
+                    <option value="${sem.id} selected">${sem.semestr}</option>
+                </c:when>
+            <c:otherwise>
+                <option value="${sem.id}">${sem.semestr}</option>
+            </c:otherwise>
+            </c:choose>
+        </c:forEach>
+    </select>
+
+    <input type="submit" value="Выбрать" class="buttonModify" id="idChoiceSemStudProgress">
+</form>
 
 </body>
 </html>

@@ -12,27 +12,27 @@
 <div>
     <div class="system">Система управления студентами и их успеваемостью</div>
     <span class="link1" style="float: right">
-        <a href="exit">Logout</a>
+        <a href="/logout">Logout</a>
     </span>
 </div>
 
 <span>
     <div class="link2">
-    <a href="../../main.jsp">На главную</a>
+    <a href="../../index.jsp">На главную</a>
     <a href="#" onclick="history.back();">Назад</a>
     </div>
 </span>
 
-<span><strong
-        class="modification">Для того чтобы создать новую дисциплину заполните все поля и нажмите кнопку "Создать"</strong></span>
-
-<fieldset>
-    <label for="nameDiscipline">Название дисциплины</label>
-</fieldset>
+<span>
+    <strong
+        class="modification">Для создания новой дисциплины заполните все поля и нажмите кнопку "Создать"
+    </strong>
+</span>
 
 <form action="/creatediscipline" method="post">
+<p><label for="nameDiscipline">Название дисциплины</label>
     <input type="text" id="nameDiscipline" name="secondName" placeholder="Введите дисциплину" required autofocus>
-    <input value="Создать" type="submit" class="buttonModify">
+    <input value="Создать" type="submit" class="buttonModify"></p>
 </form>
 
 </body>

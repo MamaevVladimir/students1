@@ -16,16 +16,17 @@
 <div>
     <div class="system">Система управления студентами и их успеваемостью</div>
     <span class="link1" style="float: right">
-        <a href="exit">Logout</a>
+        <a href="/logout">Logout</a>
     </span>
 </div>
 
 <span>
     <div class="link2">
-    <a href="../../index.jsp">На главную</a>
+    <a href="/">На главную</a>
     <a href="#" onclick="history.back();">Назад</a>
     </div>
 </span>
+
 
 <span><strong class="modification">Список дисциплин</strong></span>
 
@@ -47,29 +48,23 @@
     <div class="secondRow">
         <div class="admin-bottom">
 
-            <form action="/creatediscipline" method="get">
-                <input type="submit" value="Создать дисциплину">
-            </form>
+            <c:if test="${role eq 'admin'}">
+                <form action="/creatediscipline" method="get">
+                    <input type="submit" value="Создать дисциплину">
+                </form>
 
-            <input type="submit" onclick="modifingDiscipline()" value="Модифицировать выбранную дисциплину">
-            <form action="/modifydiscipline" id="modifDiscForm">
-                <input type="hidden" name="idModifDisc" id="idModifDisc">
-            </form>
+                <input type="submit" onclick="modifingDiscipline()" value="Модифицировать выбранную дисциплину">
+                <form action="/modifydiscipline" id="modifDiscForm">
+                    <input type="hidden" name="idModifDisc" id="idModifDisc">
+                </form>
 
-
-            <input type="submit" onclick="deleteDiscipline()" value="Удалить выбранные дисциплины">
-            <form action="/deletediscipline" id="deleteDiscForm">
-                <input type="hidden" name="idsDeleteDisc" id="idsDeleteDisc">
-            </form>
-
+                <input type="submit" onclick="deleteDiscipline()" value="Удалить выбранные дисциплины">
+                <form action="/deletediscipline" id="deleteDiscForm">
+                    <input type="hidden" name="idsDeleteDisc" id="idsDeleteDisc">
+                </form>
+            </c:if>
         </div>
     </div>
-
-
-
-
-
 </table>
-
 </body>
 </html>

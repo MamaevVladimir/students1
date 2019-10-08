@@ -14,20 +14,20 @@
 <div>
     <div class="system">Система управления студентами и их успеваемостью</div>
     <span class="link1" style="float: right">
-        <a href="exit">Logout</a>
+        <a href="/logout">Logout</a>
     </span>
 </div>
 
 <span>
     <div class="link2">
-    <a href="../../main.jsp">На главную</a>
+    <a href="/">На главную</a>
     <a href="#" onclick="history.back();">Назад</a>
     </div>
 </span>
 
 <div>
     <strong
-        class="modification">Для того чтобы модифицировать дисциплину введите новое значение поля и нажмите кнопку "Применить"
+        class="modification">Для модифицирования дисциплины введите значение поля и нажмите "Применить"
     </strong>
 </div>
 
@@ -35,8 +35,8 @@
     <label for="nameDiscipline">Название</label>
     <input type="text" id="nameDiscipline" name="secondName" placeholder="${discipline.discipline}" required autofocus>
 
-    <input type="hidden" name="discId" value="$(discipline.id)">
-    <button class="buttonModify">Применить</button>
+    <input type="hidden" name="discId" value="${discipline.id}">
+    <input type="submit" class="buttonModify" value="Применить">
 </form>
 
 </body>

@@ -57,13 +57,6 @@ a:active {
     margin-top: 40px;
 }
 
-table {
-    width: 600px;
-    margin: 200px 50px 0 200px;
-    border-collapse: collapse;
-
-}
-
 td {
     border: 1px solid black;
     padding: 10px;
@@ -71,15 +64,9 @@ td {
     max-width: 150px;
     height: 50px;
     overflow: hidden;
-    text-overflow: ellipsis;
+
     vertical-align: middle;
 
-}
-
-.table-caption {
-    display: table-caption;
-    text-align: center;
-    font-size: 30px;
 }
 
 caption {

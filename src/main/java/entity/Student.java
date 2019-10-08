@@ -1,21 +1,21 @@
 package entity;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Objects;
-import java.sql.Timestamp;
+
 
 public class Student {
     private int id;
     private String surname;
     private String name;
     private String group;
-    private String date;
+    private Date date;
     private int status = 1;
 
     public Student() {
     }
 
-    public Student(int id, String surname, String name, String group, String date, int status) {
+    public Student(int id, String surname, String name, String group, Date date, int status) {
         this.id = id;
         this.surname = surname;
         this.name = name;
@@ -56,11 +56,11 @@ public class Student {
         this.group = group;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
